@@ -27,14 +27,25 @@ if(!empty($_GET['type'])){
     <a href="?page=planet&action=insert" class="mt-2 col-2 btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Insert</a>
 </div>
 
-    <div class="row mt-3">
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2"><strong>Planet</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
         <?php foreach ($planetsList as $id => $PlanetObject) : ?>
-            <div class="col-3 mt-2"><p><strong><?=$PlanetObject->getNom()?></strong></p>
-            <a href="?page=planet&id=<?=$PlanetObject->getId()?>" class="btn btn-success"><i class="fa-solid fa-book-open-reader"></i></a>
-            <a href="?page=planet&action=modify&id=<?=$PlanetObject->getId()?>" class="btn btn-primary"><i class="fa-solid fa-pen"></i></a>
-            <a href="?page=planet&action=delete&id=<?=$PlanetObject->getId()?>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
-        </div>
+            <td class="mt-2 row"><p><strong><?=$PlanetObject->getNom()?></strong></p>
+            <a href="?page=planet&id=<?=$PlanetObject->getId()?>" class="btn btn-success col-1 m-1"><i class="fa-solid fa-book-open-reader"></i></a>
+            <a href="?page=planet&action=modify&id=<?=$PlanetObject->getId()?>" class="btn btn-primary col-1 m-1"><i class="fa-solid fa-pen"></i></a>
+            <a href="?page=planet&action=delete&id=<?=$PlanetObject->getId()?>" class="btn btn-danger col-1 m-1"><i class="fa-solid fa-trash-can"></i></a>
+        </td>
         <?php endforeach; ?>
+        </tr>
+    </tbody>
+</table>
+
         </div>
 
 
